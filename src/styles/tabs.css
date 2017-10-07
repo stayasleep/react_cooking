@@ -1,0 +1,7 @@
+.letters {
+    border:2px solid black;
+}
+
+.selected {
+    background: #797979;
+}

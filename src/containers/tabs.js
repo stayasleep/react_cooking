@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Column from '../components/column_tabs';
+import '../styles/tabs.css';
 
 class Tabs extends Component{
     constructor(props){
@@ -21,6 +22,7 @@ class Tabs extends Component{
                     tabs={this.props.tabs}
                     selected={this.props.selected}
                 />
+
             </div>
         )
     }
