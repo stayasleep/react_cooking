@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {selectNewTab} from '../actions/index';
 import Column from '../components/column_tabs';
 import '../styles/tabs.css';
 
@@ -11,6 +12,7 @@ class Tabs extends Component{
 
     handleLetterClick(letter){
         console.log('clicked',letter);
+        this.props.dispatch(selectNewTab(letter));
         //put action creator here
     }
     render(){
