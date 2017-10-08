@@ -1,19 +1,23 @@
 import axios from 'axios';
 
+
 const BASE = "http://localhost:8080/react_cooking/server/data.php?action=";
 
 export const retrieveRecipes = () =>{
+    console.log('before retrieve api');
     return axios.get(`${BASE}retrieve`).then((response) => {
-        console.log('success retrieve api',response);
+        console.log('inside of success retrieve api',response);
+        return response.data.data;
+
     }).catch((err)=>{
         console.log('retrieve err',err);
     })
 };
 
 export const addRecipe = (recipe)=>{
-    console.log('api param',recipe);
+    console.log('before api param',recipe);
     return axios.post(`${BASE}create`, recipe).then((response)=>{
-        console.log('api add',response);
+        console.log('inside api add',response);
     }).catch((err) =>{
         console.log('add err',err);
     })

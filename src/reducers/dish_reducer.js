@@ -5,7 +5,7 @@ export default function(state=defaultState, action){
     switch(action.type){
         case ADDED_RECIPE:
             console.log('reducer for added recipe',action);
-            return state;
+            return {...state, all: action.recipes};
         default:
             return state;
     }

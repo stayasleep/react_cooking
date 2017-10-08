@@ -1,6 +1,7 @@
 import React from 'react';
 
 export default function renderInput({className, input,label,type,meta:{active, dirty, touched, error}}){
+
     return(
         <div>
             <input

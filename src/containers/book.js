@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import Cover from '../components/cover';
+import Dishes from '../components/dishes';
 import Add from '../components/add';
 import {addNewRecipe} from '../actions/index';
 
@@ -11,6 +12,7 @@ class Book extends Component{
         super(props);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
+    
     handleFormSubmit(values){
         if(Object.keys(values).length === 0){
             return false;
@@ -27,15 +29,22 @@ class Book extends Component{
         return(
             <div>
                 {!this.props.selected &&
-                <Cover/>
+                    <Cover/>
                 }
                 {this.props.selected === "Add" &&
-                <Add
-                    onHandleFormSubmit={this.handleFormSubmit}
-                    handleSubmit={handleSubmit}
-                    submitting={submitting}
-                    reset={reset}
-                />
+                    <Add
+                        onHandleFormSubmit={this.handleFormSubmit}
+                        handleSubmit={handleSubmit}
+                        submitting={submitting}
+                        reset={reset}
+                    />
+                }
+                {this.props.selected && this.props.selected !== "Add" &&
+                    <Dishes
+                        dishes={this.props.food}
+                        tab={this.props.selected}
+                    />
+
                 }
             </div>
         )
