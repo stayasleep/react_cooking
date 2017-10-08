@@ -4,15 +4,23 @@ import { Field, reduxForm } from 'redux-form';
 import Cover from '../components/cover';
 import Dishes from '../components/dishes';
 import Add from '../components/add';
-import {addNewRecipe} from '../actions/index';
+import {addNewRecipe,getAllRecipes} from '../actions/index';
 
 
 class Book extends Component{
     constructor(props){
         super(props);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        this.handleEntryDelete = this.handleEntryDelete.bind(this);
     }
-    
+    componentWillMount(){
+        this.props.dispatch(getAllRecipes());
+    }
+
+    componentWillReceiveProps(nextProps){
+        console.log('book will receive next props',nextProps);
+    }
+
     handleFormSubmit(values){
         if(Object.keys(values).length === 0){
             return false;
@@ -21,6 +29,9 @@ class Book extends Component{
         this.props.reset("dishEntry");
 
         console.log('form parent',values);
+    }
+    handleEntryDelete(){
+
     }
 
     render(){
@@ -43,6 +54,7 @@ class Book extends Component{
                     <Dishes
                         dishes={this.props.food}
                         tab={this.props.selected}
+                        handleEntryDelete={this.handleEntryDelete}
                     />
 
                 }

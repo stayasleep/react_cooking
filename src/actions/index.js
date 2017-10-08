@@ -1,4 +1,4 @@
-import { REQ_TAB, SELECTED_TAB, REQ_ADD_RECIPE } from './types';
+import { REQ_TAB, SELECTED_TAB, REQ_ADD_RECIPE, REQ_GET_DISHES } from './types';
 
 export const selectNewTab = (letter) => ({
 	type: REQ_TAB,
@@ -9,5 +9,9 @@ export const selectNewTab = (letter) => ({
 export const addNewRecipe = (recipe) => ({
     type: REQ_ADD_RECIPE,
     payload: recipe
+});
+
+export const getAllRecipes = () =>({
+    type: REQ_GET_DISHES
 });
 
