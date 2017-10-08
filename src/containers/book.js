@@ -12,6 +12,7 @@ class Book extends Component{
         super(props);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.handleEntryDelete = this.handleEntryDelete.bind(this);
+        this.state={};
     }
     componentWillMount(){
         this.props.dispatch(getAllRecipes());
@@ -19,6 +20,17 @@ class Book extends Component{
 
     componentWillReceiveProps(nextProps){
         console.log('book will receive next props',nextProps);
+        if(this.props.selected !== nextProps.selected){
+            if(nextProps.selected !== "Add"){
+                //a letter is selected, makes the state
+                let filteredDishes = nextProps.food.filter((dish,index)=>{
+                    return dish.dish_name[0].toUpperCase() === nextProps.selected;
+                });
+                console.log('there are filtered dishes',filteredDishes.length);
+                this.setState({editDish: Array(filteredDishes.length).fill(false)});
+
+            }
+        }
     }
 
     handleFormSubmit(values){
