@@ -21,6 +21,9 @@ class Book extends Component{
         this.handleEntryDelete = this.handleEntryDelete.bind(this);
         this.cancelEntryDelete = this.cancelEntryDelete.bind(this);
         this.confirmActivity = this.confirmActivity.bind(this);
+        this.handleEntryEdit = this.handleEntryEdit.bind(this);
+        this.cancelEntryEdit = this.cancelEntryEdit.bind(this);
+        this.handleEditForm = this.handleEditForm.bind(this);
     }
     componentWillMount(){
         this.props.dispatch(getAllRecipes());
@@ -38,12 +41,16 @@ class Book extends Component{
             }
         }
     }
-
+    handleEditForm(values){
+        console.log('edit val',values);
+    }
     handleFormSubmit(values){
+        console.log('my form',values);
         if(Object.keys(values).length === 0){
             return false;
         }
-        this.props.dispatch(addNewRecipe(values));
+        console.log('form sub again',values);
+        // this.props.dispatch(addNewRecipe(values));
         this.props.reset("dishEntry");
     }
 
@@ -63,10 +70,23 @@ class Book extends Component{
         this.setState({showModal: !this.state.showModal, recipe: null});
     }
 
+    handleEntryEdit(index){
+        console.log('my position in this tab is num',index);
+        const dishArray = this.state.editDish.slice();
+        dishArray[index] = !dishArray[index];
+        console.log('dish array', dishArray);
+        this.setState({editDish:dishArray})
+    }
+    cancelEntryEdit(index){
+        const dishArray = this.state.editDish.slice();
+        dishArray[index] = !dishArray[index];
+        this.setState({editDish: dishArray});
+    }
+
+
     render(){
-        console.log('props to book',this.props);
-        console.log('stae to book',this.state);
         const {food, handleSubmit, selected, submitting, reset} = this.props;
+        console.log('books',this.props);
         return(
             <div>
                 {!this.props.selected &&
@@ -86,11 +106,19 @@ class Book extends Component{
                     <Dishes
                         dishes={this.props.food}
                         tab={this.props.selected}
-                        //handleEntryDelete={this.handleEntryDelete}
                         confirmActivity={this.confirmActivity}
+                        handleEntryEdit={this.handleEntryEdit}
+                        edit={this.state.editDish}
+                        cancelEntryEdit={this.cancelEntryEdit}
+
+                        onEdit={this.handleEditForm}
+                        handleSubmit={handleSubmit}
+                        submitting={submitting}
                     />
 
                 }
+
+
                 {this.state.showModal &&
                     <Confirm
                         display={this.state.showModal}
@@ -99,7 +127,6 @@ class Book extends Component{
                         cancelEntryDelete={this.cancelEntryDelete}
                     />
                 }
-
 
             </div>
         )
@@ -148,11 +175,14 @@ function validate(values){
 }
 Book = reduxForm({
     form: "dishEntry",
+    enableReinitialize: true,
+    overwriteOnInitialValuesChange: false,
     validate
 })(Book);
 
 
-const mapStateToProps = (state)=>{
+const mapStateToProps = (state, ownProps)=>{
+    // console.log('my own props',ownProps);
     return {
         food: state.dishes.all,
         selected: state.tab.selected
