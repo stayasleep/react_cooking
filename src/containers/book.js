@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
+import Confirm from '../components/confirmation';
 import Cover from '../components/cover';
 import Dishes from '../components/dishes';
 import Add from '../components/add';
@@ -8,27 +9,32 @@ import {addNewRecipe,getAllRecipes} from '../actions/index';
 
 
 class Book extends Component{
+
     constructor(props){
         super(props);
+        this.state={
+            showModal: false,
+            recipe: null
+        };
+
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.handleEntryDelete = this.handleEntryDelete.bind(this);
-        this.state={};
+        this.cancelEntryDelete = this.cancelEntryDelete.bind(this);
+        this.confirmActivity = this.confirmActivity.bind(this);
     }
     componentWillMount(){
         this.props.dispatch(getAllRecipes());
     }
 
     componentWillReceiveProps(nextProps){
-        console.log('book will receive next props',nextProps);
         if(this.props.selected !== nextProps.selected){
             if(nextProps.selected !== "Add"){
+                console.log('next not this received');
                 //a letter is selected, makes the state
                 let filteredDishes = nextProps.food.filter((dish,index)=>{
                     return dish.dish_name[0].toUpperCase() === nextProps.selected;
                 });
-                console.log('there are filtered dishes',filteredDishes.length);
                 this.setState({editDish: Array(filteredDishes.length).fill(false)});
-
             }
         }
     }
@@ -39,21 +45,34 @@ class Book extends Component{
         }
         this.props.dispatch(addNewRecipe(values));
         this.props.reset("dishEntry");
-
-        console.log('form parent',values);
     }
-    handleEntryDelete(){
 
+    confirmActivity(recipe){
+        console.log('confirm activity',recipe);
+        //each entry can activate a shared modal, one at a time, and will pass the info to be deleted
+        this.setState({showModal: true, recipe: recipe})
+    }
+    cancelEntryDelete(){
+        console.log('cancel entry delte');
+        //cancel modal activity and reset default values
+        this.setState({showModal: !this.state.showModal, recipe: null});
+    }
+    handleEntryDelete(id){
+        //info is passed into the modal from the local component state and returned here
+        console.log('dish to delete',id);
+        this.setState({showModal: !this.state.showModal, recipe: null});
     }
 
     render(){
         console.log('props to book',this.props);
-        const {handleSubmit, submitting, reset} = this.props;
+        console.log('stae to book',this.state);
+        const {food, handleSubmit, selected, submitting, reset} = this.props;
         return(
             <div>
                 {!this.props.selected &&
                     <Cover/>
                 }
+
                 {this.props.selected === "Add" &&
                     <Add
                         onHandleFormSubmit={this.handleFormSubmit}
@@ -62,14 +81,26 @@ class Book extends Component{
                         reset={reset}
                     />
                 }
+
                 {this.props.selected && this.props.selected !== "Add" &&
                     <Dishes
                         dishes={this.props.food}
                         tab={this.props.selected}
-                        handleEntryDelete={this.handleEntryDelete}
+                        //handleEntryDelete={this.handleEntryDelete}
+                        confirmActivity={this.confirmActivity}
                     />
 
                 }
+                {this.state.showModal &&
+                    <Confirm
+                        display={this.state.showModal}
+                        recipe={this.state.recipe}
+                        handleEntryDelete={this.handleEntryDelete}
+                        cancelEntryDelete={this.cancelEntryDelete}
+                    />
+                }
+
+
             </div>
         )
     }

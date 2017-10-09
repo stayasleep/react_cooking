@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Book from './containers/book';
 import Tabs from './containers/tabs';
+import Modal from './containers/modal';
 import './App.css';
 
 class App extends Component {

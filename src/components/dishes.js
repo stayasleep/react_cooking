@@ -25,7 +25,7 @@ const Dishes =(props) =>{
                             </div>
                             <div className="dish-options">
                                 <button>Edit</button>
-                                <button>Delete</button>
+                                <button onClick={props.confirmActivity.bind(this,recipe)}>Delete</button>
                             </div>
                         </div>
                     )
