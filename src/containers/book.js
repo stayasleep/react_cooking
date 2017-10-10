@@ -49,8 +49,7 @@ class Book extends Component{
         if(Object.keys(values).length === 0){
             return false;
         }
-        console.log('form sub again',values);
-        // this.props.dispatch(addNewRecipe(values));
+        this.props.dispatch(addNewRecipe(values));
         this.props.reset("dishEntry");
     }
 
