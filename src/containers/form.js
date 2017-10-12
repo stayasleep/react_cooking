@@ -42,9 +42,17 @@ function validate(values) {
     return errors;
 }
 DishForm = reduxForm({
-    form:'edit',
+    // form:'edit',
     enableReinitialize: true,
     validate
 })(DishForm);
 
-export default DishForm;
+
+const mapStateToProps = (state,ownProps)=>{
+    console.log('dish form ownprops',ownProps);
+    return{
+        form: `edit${ownProps.index}`,
+    }
+};
+
+export default connect(mapStateToProps)(DishForm);

@@ -58,9 +58,5 @@ const Dishes =(props) =>{
 
 
 
-export default reduxForm({
-    form:"edits",
-    enableReinitialize:true,
-})(Dishes);
-
+export default Dishes;
 
