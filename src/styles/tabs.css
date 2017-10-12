@@ -1,7 +1,19 @@
 .letters {
     border:2px solid black;
+    padding:12px 14px;
 }
 
 .selected {
     background: #797979;
+}
+.tab-title{
+    text-align: center;
+}
+.tabs-box {
+    margin: 2em 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
 }

@@ -4,11 +4,10 @@ import { Field, reduxForm } from 'redux-form';
 import renderInput from '../utilities/renderInput';
 
 
-class DishForm extends Component{
+class EditForm extends Component{
     render(){
         const {handleSubmit,index, reset} = this.props;
         return(
-            <div>
                 <form onSubmit={handleSubmit((values)=> {this.props.onEdit(values)})}>
                     <Field className="form-control edit-name" type="text" name="edit_name" component={renderInput}/>
                     <Field name="edit_ingred" className="form-control edit-ingredients" type="text"  component={renderInput}/>
@@ -19,10 +18,10 @@ class DishForm extends Component{
                         <button type="button" className="reset btn btn-lg btn-outline-info" onClick={this.props.cancelEntryEdit.bind(this,index)}>Cancel</button>
                     </div>
                 </form>
-            </div>
         )
     }
 }
+
 function validate(values) {
     console.log('edit val',values);
     const errors = {};
@@ -41,18 +40,17 @@ function validate(values) {
 
     return errors;
 }
-DishForm = reduxForm({
-    // form:'edit',
-    enableReinitialize: true,
+EditForm = reduxForm({
+    // enableReinitialize: true,
     validate
-})(DishForm);
+
+})(EditForm);
 
 
 const mapStateToProps = (state,ownProps)=>{
-    console.log('dish form ownprops',ownProps);
     return{
         form: `edit${ownProps.index}`,
     }
 };
 
-export default connect(mapStateToProps)(DishForm);
+export default connect(mapStateToProps)(EditForm);

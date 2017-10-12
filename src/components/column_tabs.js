@@ -4,7 +4,8 @@ import {Col} from 'react-bootstrap';
 const Column = (props)=>{
     console.log('eh',props.tabs);
     return(
-        <Col xs={4}>
+        <Col xs={12}>
+            <h1 className="tab-title">Select A Tab</h1>
             <div className="tabs-box">
                 {props.tabs.map((letter,index)=>{
                     return(

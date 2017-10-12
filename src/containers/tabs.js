@@ -13,7 +13,6 @@ class Tabs extends Component{
     handleLetterClick(letter){
         console.log('clicked',letter);
         this.props.dispatch(selectNewTab(letter));
-        //put action creator here
     }
     render(){
         console.log('prop it!',this.props);

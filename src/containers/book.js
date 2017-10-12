@@ -5,7 +5,7 @@ import Confirm from '../components/confirmation';
 import Cover from '../components/cover';
 import Dishes from '../components/dishes';
 import Add from '../components/add';
-import {addNewRecipe,getAllRecipes} from '../actions/index';
+import {addNewRecipe,getAllRecipes, selectNewTab} from '../actions/index';
 
 
 class Book extends Component{
@@ -24,6 +24,7 @@ class Book extends Component{
         this.handleEntryEdit = this.handleEntryEdit.bind(this);
         this.cancelEntryEdit = this.cancelEntryEdit.bind(this);
         this.handleEditForm = this.handleEditForm.bind(this);
+        this.handleRandomClick = this.handleRandomClick.bind(this);
     }
     componentWillMount(){
         this.props.dispatch(getAllRecipes());
@@ -41,6 +42,16 @@ class Book extends Component{
             }
         }
     }
+    handleRandomClick(){
+        const random = Math.round(Math.random()*26);
+        const alphabet=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+        const letter = alphabet[random];
+
+        this.props.dispatch(selectNewTab(letter));
+
+
+    }
+
     handleEditForm(values){
         console.log('edit val',values);
     }
@@ -89,7 +100,9 @@ class Book extends Component{
         return(
             <div>
                 {!this.props.selected &&
-                    <Cover/>
+                    <Cover
+                        onClick={this.handleRandomClick}
+                    />
                 }
 
                 {this.props.selected === "Add" &&
@@ -174,14 +187,13 @@ function validate(values){
 }
 Book = reduxForm({
     form: "dishEntry",
-    enableReinitialize: true,
+    // enableReinitialize: true,
     overwriteOnInitialValuesChange: false,
     validate
 })(Book);
 
 
 const mapStateToProps = (state, ownProps)=>{
-    // console.log('my own props',ownProps);
     return {
         food: state.dishes.all,
         selected: state.tab.selected

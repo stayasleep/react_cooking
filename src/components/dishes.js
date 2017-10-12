@@ -1,9 +1,6 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {Col} from 'react-bootstrap';
-import { Field, reduxForm } from 'redux-form';
-import renderInput from '../utilities/renderInput';
-import DishForm from '../containers/form';
+import {Button, Col} from 'react-bootstrap';
+import EditForm from '../containers/form';
 
 
 const Dishes =(props) =>{
@@ -15,7 +12,6 @@ const Dishes =(props) =>{
                     return dish.dish_name[0].toUpperCase() === props.tab;
                 }).map((recipe,index)=>{
                     console.log('inside map',recipe);
-                    //return(
                         {return !props.edit[index] ? (
                         <div key={index} className="recipe-box">
                             <div className="dish-name">
@@ -31,13 +27,13 @@ const Dishes =(props) =>{
                                 {recipe.description}
                             </div>
                             <div className="dish-options">
-                                <button onClick={props.handleEntryEdit.bind(this,index)}>Edit</button>
-                                <button onClick={props.confirmActivity.bind(this,recipe)}>Delete</button>
+                                <Button onClick={props.handleEntryEdit.bind(this,index)} bsStyle="link">Edit</Button>
+                                <Button onClick={props.confirmActivity.bind(this,recipe)} bsStyle="link">Delete</Button>
                             </div>
                         </div>
                         ) : (
                             <div key={index} className="recipe-box">
-                               <DishForm
+                               <EditForm
                                    key={index}
                                    initialValues={{edit_name:`${recipe.dish_name}`, edit_time:`${recipe.cook_time}`,edit_desc:`${recipe.description}`, edit_ingred:`${recipe.ingredients}`}}
                                    onEdit={props.onEdit}
@@ -47,8 +43,6 @@ const Dishes =(props) =>{
                             </div>
                         )
                         }
-
-                   // )
                 })
                 }
             </div>
