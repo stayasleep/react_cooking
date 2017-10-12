@@ -5,6 +5,7 @@ import { Field, reduxForm } from 'redux-form';
 
 
 const Add = (props) =>{
+    console.log('props',props);
     return(
         <Col xs={8}>
             <div>

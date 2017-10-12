@@ -109,10 +109,13 @@ class Book extends Component{
                         handleEntryEdit={this.handleEntryEdit}
                         edit={this.state.editDish}
                         cancelEntryEdit={this.cancelEntryEdit}
-
-                        onEdit={this.handleEditForm}
+                        //onHandleFormSubmit={this.handleFormSubmit}
                         handleSubmit={handleSubmit}
                         submitting={submitting}
+                        reset={reset}
+                        onEdit={this.handleEditForm}
+                        initialValues={this.props.food}
+
                     />
 
                 }
@@ -168,7 +171,6 @@ function validate(values){
         errors.description ="Description must be fewer than 100 characters";
     }
 
-    return errors;
 
 
 }
