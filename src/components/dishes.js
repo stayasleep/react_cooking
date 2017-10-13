@@ -1,12 +1,13 @@
 import React from 'react';
 import {Button, Col} from 'react-bootstrap';
 import EditForm from '../containers/form';
+import '../styles/dishes.css';
 
 
 const Dishes =(props) =>{
     console.log('dish prop',props);
     return(
-        <Col xs={8}>
+        <Col sm={10}>
             <div className="dish-container">
                 {props.dishes.filter((dish,index)=>{
                     return dish.dish_name[0].toUpperCase() === props.tab;
@@ -15,16 +16,16 @@ const Dishes =(props) =>{
                         {return !props.edit[index] ? (
                         <div key={index} className="recipe-box">
                             <div className="dish-name">
-                                {`${index+1}) ${recipe.dish_name}`}
+                                <span className="num">{`${index+1})`}</span>{` ${recipe.dish_name}`}
                             </div>
                             <div className="dish-time">
-                                {recipe.cook_time}
+                                <span className="time">Time: </span>{recipe.cook_time}
                             </div>
                             <div className="dish-ingredients">
-                                {recipe.ingredients}
+                                <span className="ingred">Ingredients: </span>{recipe.ingredients}
                             </div>
                             <div className="dish-desc">
-                                {recipe.description}
+                                <span className="desc">Description: </span>{recipe.description}
                             </div>
                             <div className="dish-options">
                                 <Button onClick={props.handleEntryEdit.bind(this,index)} bsStyle="link">Edit</Button>

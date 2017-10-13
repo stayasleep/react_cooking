@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import renderInput from '../utilities/renderInput';
-
+import '../styles/form.css';
 
 class EditForm extends Component{
     render(){

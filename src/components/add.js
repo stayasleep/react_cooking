@@ -2,14 +2,15 @@ import React from 'react';
 import {Col} from 'react-bootstrap';
 import renderInput from '../utilities/renderInput';
 import { Field, reduxForm } from 'redux-form';
+import '../styles/add.css';
 
 
 const Add = (props) =>{
     console.log('props',props);
     return(
-        <Col xs={8}>
-            <div>
-                <h4>Add A Recipe</h4>
+        <Col sm={10} smOffset={1}>
+            <div className="add-header">
+                <h1 className="add-title">Add A Recipe</h1>
             </div>
             <div className="form-container">
                 <form onSubmit={props.handleSubmit((values)=> {props.onHandleFormSubmit(values)})}>

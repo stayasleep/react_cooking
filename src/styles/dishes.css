@@ -1,0 +1,30 @@
+.dish-container{
+    display: table-row-group;
+}
+
+.num{
+    font-weight: 700;
+    font-size: 1.25em;
+}
+.time, .ingred, .desc {
+    font-weight: 600;
+    font-style: italic;
+
+}
+
+.recipe-box{
+    /*display: table-row;*/
+}
+
+.dish-time, .dish-ingredients{
+    display: table-cell;
+    padding:6px;
+}
+
+.dish-desc {
+    padding:6px;
+}
+
+.dish-options{
+    margin:8px;
+}

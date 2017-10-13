@@ -96,7 +96,7 @@ class Book extends Component{
 
     render(){
         const {food, handleSubmit, selected, submitting, reset} = this.props;
-        console.log('books',this.props);
+        console.log('books',this.state);
         return(
             <div>
                 {!this.props.selected &&
@@ -182,6 +182,7 @@ function validate(values){
         errors.description ="Description must be fewer than 100 characters";
     }
 
+    return errors;
 
 
 }
