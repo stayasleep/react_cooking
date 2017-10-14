@@ -3,20 +3,9 @@ import {Col} from 'react-bootstrap';
 import '../styles/cover.css';
 
 const Cover = (props) =>{
-    // return(
-    //     <Col xs={12}>
-    //         <div className="cover-container">
-    //             <div className="cover-title">
-    //                 <h1>Stayasleep&apos;s Recipe Book</h1>
-    //                 <h2>A Family cook book</h2>
-    //                 <h3>Made with React</h3>
-    //             </div>
-    //         </div>
-    //     </Col>
-    //
-    // )
+
     return(
-        <Col xs={8}>
+        <Col sm={8} smOffset={3} >
             <div className="cover-component">
                 <ul className="align">
                     <li>

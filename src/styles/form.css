@@ -1,3 +1,6 @@
 .edit-name, .edit-ingredients, .edit-time, .edit-desc{
     margin-bottom: 5px;
 }
+.edit-ingredients, .edit-time {
+    display: table-cell;
+}

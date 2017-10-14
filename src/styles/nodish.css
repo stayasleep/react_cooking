@@ -1,0 +1,11 @@
+.empty-box{
+    margin: 3em auto;
+    /*width: 100%;*/
+}
+.empty-yet{
+    font-style: italic;
+}
+.empty-title,.empty-sub{
+    text-align: center;
+    margin: 2em 0;
+}

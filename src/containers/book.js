@@ -4,6 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 import Confirm from '../components/confirmation';
 import Cover from '../components/cover';
 import Dishes from '../components/dishes';
+import NoDishes from '../components/no_dishes';
 import Add from '../components/add';
 import {addNewRecipe,getAllRecipes, selectNewTab} from '../actions/index';
 
@@ -111,6 +112,11 @@ class Book extends Component{
                         handleSubmit={handleSubmit}
                         submitting={submitting}
                         reset={reset}
+                    />
+                }
+                {this.state.editDish && this.state.editDish.length === 0 &&
+                    <NoDishes
+                        tab={this.props.selected}
                     />
                 }
 

@@ -10,8 +10,12 @@ class EditForm extends Component{
         return(
                 <form onSubmit={handleSubmit((values)=> {this.props.onEdit(values)})}>
                     <Field className="form-control edit-name" type="text" name="edit_name" component={renderInput}/>
-                    <Field name="edit_ingred" className="form-control edit-ingredients" type="text"  component={renderInput}/>
+                    <span className="edit-time">
                     <Field name="edit_time" className="form-control edit-time" type="text"  component={renderInput} />
+                    </span>
+                    <span className="edit-ingredients">
+                    <Field name="edit_ingred" className="form-control edit-ingredients" type="text"  component={renderInput}/>
+                    </span>
                     <Field name="edit_desc" className="form-control edit-desc" type="text"  component={renderInput}/>
                     <div className="btns-box">
                         <button type="submit" className="submit btn btn-lg btn-outline-dark" >Submit</button>

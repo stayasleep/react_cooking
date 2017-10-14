@@ -1,6 +1,9 @@
 .add-header {
     text-align: center;
 }
+.recipe-name, .recipe-ingredients, .recipe-time, .recipe-desc{
+    margin-bottom: 10px;
+}
 .btn-outline-info {
     color: #17a2b8;
     background-color: transparent;

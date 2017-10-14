@@ -7,14 +7,15 @@ import '../styles/dishes.css';
 const Dishes =(props) =>{
     console.log('dish prop',props);
     return(
-        <Col sm={10}>
+        <Col sm={12} className="">
+            <div className="mtop">
             <div className="dish-container">
                 {props.dishes.filter((dish,index)=>{
                     return dish.dish_name[0].toUpperCase() === props.tab;
                 }).map((recipe,index)=>{
                     console.log('inside map',recipe);
                         {return !props.edit[index] ? (
-                        <div key={index} className="recipe-box">
+                        <Col sm={6} key={index} className="recipe-box">
                             <div className="dish-name">
                                 <span className="num">{`${index+1})`}</span>{` ${recipe.dish_name}`}
                             </div>
@@ -31,9 +32,9 @@ const Dishes =(props) =>{
                                 <Button onClick={props.handleEntryEdit.bind(this,index)} bsStyle="link">Edit</Button>
                                 <Button onClick={props.confirmActivity.bind(this,recipe)} bsStyle="link">Delete</Button>
                             </div>
-                        </div>
+                        </Col>
                         ) : (
-                            <div key={index} className="recipe-box">
+                            <Col sm={6} key={index} className="recipe-box">
                                <EditForm
                                    key={index}
                                    initialValues={{edit_name:`${recipe.dish_name}`, edit_time:`${recipe.cook_time}`,edit_desc:`${recipe.description}`, edit_ingred:`${recipe.ingredients}`}}
@@ -41,11 +42,12 @@ const Dishes =(props) =>{
                                    cancelEntryEdit={props.cancelEntryEdit}
                                    index={index}
                                />
-                            </div>
+                            </Col>
                         )
                         }
                 })
                 }
+            </div>
             </div>
         </Col>
     )

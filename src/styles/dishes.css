@@ -1,6 +1,10 @@
 .dish-container{
-    display: table-row-group;
+    /*display: table-row-group;*/
 }
+.mtop{
+    margin: 2em;
+}
+
 
 .num{
     font-weight: 700;

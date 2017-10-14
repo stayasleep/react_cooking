@@ -8,7 +8,7 @@ import '../styles/add.css';
 const Add = (props) =>{
     console.log('props',props);
     return(
-        <Col sm={10} smOffset={1}>
+        <Col sm={10} smOffset={1} className="well">
             <div className="add-header">
                 <h1 className="add-title">Add A Recipe</h1>
             </div>

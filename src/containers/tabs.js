@@ -17,14 +17,11 @@ class Tabs extends Component{
     render(){
         console.log('prop it!',this.props);
         return(
-            <div>
                 <Column
                     onClick={this.handleLetterClick}
                     tabs={this.props.tabs}
                     selected={this.props.selected}
                 />
-
-            </div>
         )
     }
 }
