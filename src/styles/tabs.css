@@ -1,6 +1,7 @@
 .letters {
     border:2px solid black;
     padding:12px 14px;
+    margin:12px 0;
 }
 
 .selected {
@@ -14,6 +15,6 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
 }

@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 
-const BASE = "http://localhost:8080/react_cooking/server/data.php?action=";
-
+// const BASE = "http://localhost:8080/react_cooking/server/data.php?action=";
+const BASE = "/react_cooking/server/data.php?action=";
 export const retrieveRecipes = () =>{
     console.log('before retrieve api');
     return axios.get(`${BASE}retrieve`).then((response) => {
