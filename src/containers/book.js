@@ -15,7 +15,8 @@ class Book extends Component{
         super(props);
         this.state={
             showModal: false,
-            recipe: null
+            recipe: null,
+            current: [],
         };
 
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -26,12 +27,17 @@ class Book extends Component{
         this.cancelEntryEdit = this.cancelEntryEdit.bind(this);
         this.handleEditForm = this.handleEditForm.bind(this);
         this.handleRandomClick = this.handleRandomClick.bind(this);
+
+        this.renderDishList = this.renderDishList.bind(this);
+        this.handleNext = this.handleNext.bind(this);
+        this.handlePrevious = this.handlePrevious.bind(this);
     }
     componentWillMount(){
         this.props.dispatch(getAllRecipes());
     }
 
     componentWillReceiveProps(nextProps){
+        console.log("WILL RECEIVE PROPS",nextProps);
         if(this.props.selected !== nextProps.selected){
             if(nextProps.selected !== "Add"){
                 console.log('next not this received');
@@ -39,10 +45,76 @@ class Book extends Component{
                 let filteredDishes = nextProps.food.filter((dish,index)=>{
                     return dish.dish_name[0].toUpperCase() === nextProps.selected;
                 });
-                this.setState({editDish: Array(filteredDishes.length).fill(false)});
+                console.log("WILL SETSTATE NOW!!!!!!!!!");
+                this.setState({editDish: Array(filteredDishes.length).fill(false), current: filteredDishes});
             }
         }
     }
+
+    renderDishList(){
+        // if(dishes.length < 10 ) {
+        //     return <Dishes dishes={this.props.food}/>
+        // }else{
+        //
+        // }
+
+        //lets check our total filtered array
+        const dishes = this.state.current.slice();
+        if(dishes.length < 4){
+            return (
+                <Dishes
+                    dishes={dishes}
+                    tab={this.props.selected}
+                    confirmActivity={this.confirmActivity}
+                    handleEntryEdit={this.handleEntryEdit}
+                    edit={this.state.editDish}
+                    cancelEntryEdit={this.cancelEntryEdit}
+                    handleSubmit={this.props.handleSubmit}
+                    submitting={this.props.submitting}
+                    reset={this.props.reset}
+                    onEdit={this.handleEditForm}
+                    paginate={false}
+                />
+            )
+        }else{
+            //over 10 !!!!
+            return(
+                <Dishes
+                    dishes={dishes}
+                    tab={this.props.selected}
+                    confirmActivity={this.confirmActivity}
+                    handleEntryEdit={this.handleEntryEdit}
+                    edit={this.state.editDish}
+                    cancelEntryEdit={this.cancelEntryEdit}
+                    handleSubmit={this.props.handleSubmit}
+                    submitting={this.props.submitting}
+                    reset={this.props.reset}
+                    onEdit={this.handleEditForm}
+                    paginate={true}
+                    handleNext={this.handleNext}
+                    handlePrevious={this.handlePrevious}
+                />
+            )
+        }
+
+
+
+        console.log('state isssss',this.state.current);
+        console.log('disssssssssh',dishes);
+    }
+    handleNext(){
+        //this needs to grab the next 10 in the array
+        console.log('handle next');
+
+    }
+    handlePrevious(){
+        //this needs to return to the previous 10
+        console.log('handle previous');
+
+    }
+
+
+
     handleRandomClick(){
         const random = Math.round(Math.random()*26);
         const alphabet=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -97,7 +169,7 @@ class Book extends Component{
 
     render(){
         const {food, handleSubmit, selected, submitting, reset} = this.props;
-        console.log('books',this.state);
+        console.log('BOOOKS RENDER',this.state);
         return(
             <div>
                 {!this.props.selected &&
@@ -120,23 +192,23 @@ class Book extends Component{
                     />
                 }
 
-                {this.props.selected && this.props.selected !== "Add" &&
-                    <Dishes
-                        dishes={this.props.food}
-                        tab={this.props.selected}
-                        confirmActivity={this.confirmActivity}
-                        handleEntryEdit={this.handleEntryEdit}
-                        edit={this.state.editDish}
-                        cancelEntryEdit={this.cancelEntryEdit}
-                        handleSubmit={handleSubmit}
-                        submitting={submitting}
-                        reset={reset}
-                        onEdit={this.handleEditForm}
+                {this.props.selected && this.props.selected !=="Add" && this.renderDishList()}
+                {/*{this.props.selected && this.props.selected !== "Add" &&*/}
+                    {/*<Dishes*/}
+                        {/*dishes={this.props.food}*/}
+                        {/*tab={this.props.selected}*/}
+                        {/*confirmActivity={this.confirmActivity}*/}
+                        {/*handleEntryEdit={this.handleEntryEdit}*/}
+                        {/*edit={this.state.editDish}*/}
+                        {/*cancelEntryEdit={this.cancelEntryEdit}*/}
+                        {/*handleSubmit={handleSubmit}*/}
+                        {/*submitting={submitting}*/}
+                        {/*reset={reset}*/}
+                        {/*onEdit={this.handleEditForm}*/}
 
-                    />
+                    {/*/>*/}
 
-                }
-
+                {/*}*/}
 
                 {this.state.showModal &&
                     <Confirm
