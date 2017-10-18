@@ -16,7 +16,9 @@ class Book extends Component{
         this.state={
             showModal: false,
             recipe: null,
-            current: [],
+            totalFiltered: [],
+            stepper: null,
+            count: 0
         };
 
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -45,21 +47,39 @@ class Book extends Component{
                 let filteredDishes = nextProps.food.filter((dish,index)=>{
                     return dish.dish_name[0].toUpperCase() === nextProps.selected;
                 });
-                console.log("WILL SETSTATE NOW!!!!!!!!!");
-                this.setState({editDish: Array(filteredDishes.length).fill(false), current: filteredDishes});
+                console.log('filtered dish',filteredDishes);
+                let stepper = Math.ceil(filteredDishes.length/4) -1;//maybe math.floor instead
+                let portion = filteredDishes.slice(0,4); //initialize the state to first 4
+                //we have an array of X, but we only want to display X-n at a time, until you hit stepper and then x-(n+1) at a time
+                let partition = filteredDishes.reduce((arr,value,index)=>{
+                    const splitAt = Math.floor(index/4);
+
+                    if(!arr[splitAt]){
+                        arr[splitAt]=[];
+                    }
+                    arr[splitAt].push(value);
+                    return arr;
+                },[]);
+                console.log('split into two arrays for C',partition);
+
+
+
+
+                this.setState({
+                    editDish: Array(portion.length).fill(false),
+                    //display: portion,
+                    display: partition,
+                    totalFiltered: filteredDishes,
+                    stepper: stepper,
+                });
             }
         }
     }
 
     renderDishList(){
-        // if(dishes.length < 10 ) {
-        //     return <Dishes dishes={this.props.food}/>
-        // }else{
-        //
-        // }
-
         //lets check our total filtered array
-        const dishes = this.state.current.slice();
+        console.log('renda chameleon');
+        const dishes = this.state.totalFiltered.slice();
         if(dishes.length < 4){
             return (
                 <Dishes
@@ -78,9 +98,12 @@ class Book extends Component{
             )
         }else{
             //over 10 !!!!
+            let partition = this.state.display.slice();
+            let subArr = this.state.count;
             return(
                 <Dishes
-                    dishes={dishes}
+                    dishes={partition[subArr]}
+                    //dishes={partition}
                     tab={this.props.selected}
                     confirmActivity={this.confirmActivity}
                     handleEntryEdit={this.handleEntryEdit}
@@ -96,20 +119,32 @@ class Book extends Component{
                 />
             )
         }
-
-
-
-        console.log('state isssss',this.state.current);
-        console.log('disssssssssh',dishes);
     }
+
     handleNext(){
-        //this needs to grab the next 10 in the array
-        console.log('handle next');
+        //you can only increase as long as you dont surpass the maximum number of sub arrays
+        if(this.state.count < this.state.stepper){
+            this.setState({
+                count: this.state.count+1,
+            });
+        }
+        // console.log('handle next');
+        // this.setState({
+        //     count: this.state.count + 1,
+        // })
 
     }
     handlePrevious(){
-        //this needs to return to the previous 10
-        console.log('handle previous');
+        //so we dont end up on page negative X
+        if(this.state.count > 0){
+            this.setState({
+                count: this.state.count -1,
+            });
+        }
+        // console.log('handle previous');
+        // this.setState({
+        //     count: this.state.count -1,
+        // })
 
     }
 
