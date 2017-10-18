@@ -55,6 +55,14 @@ const Dishes =(props) =>{
         <Col sm={12} className="">
             <div className="mtop">
                 <div className="dish-container">
+                    {props.paginate &&
+                    <Col sm={12}>
+                        <div className="paginate">
+                            <Button className="previous" bsStyle="link" onClick={props.handlePrevious}>Previous</Button>
+                            <Button className="next" bsStyle="link" onClick={props.handleNext}>Next</Button>
+                        </div>
+                    </Col>
+                    }
                     {props.dishes.map((recipe,index)=> {
                         console.log('inside map',recipe);
                         {return !props.edit[index] ? (
@@ -89,14 +97,6 @@ const Dishes =(props) =>{
                             )
                         }
                     })
-                    }
-                    {props.paginate &&
-                    <Col sm={12}>
-                        <div className="paginate">
-                            <Button bsStyle="link" onClick={props.handlePrevious}>Previous</Button>
-                            <Button bsStyle="link" onClick={props.handleNext}>Next</Button>
-                        </div>
-                    </Col>
                     }
                 </div>
             </div>

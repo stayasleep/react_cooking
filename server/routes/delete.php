@@ -2,6 +2,18 @@
 if(mysqli_connect_errno()){
     die("Connection Failed: ".mysqli_connect_error());
 }
+var_dump("post",$_REQUEST);
+print "nothing";
+
+
+$client = file_get_contents("php://input");
+$client = utf8_encode($client);
+$res = json_decode($client, true);
+var_dump($res);
+foreach (getallheaders() as $name => $value) {
+    print "$name: $value\n";
+}
+
 if(!isset($id)){
     $output['errors'][]="ID not supplied with request";
 }

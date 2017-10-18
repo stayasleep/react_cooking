@@ -1,6 +1,12 @@
 .dish-container{
     /*display: table-row-group;*/
 }
+.paginate{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1em;
+}
+
 .mtop{
     margin: 2em;
 }

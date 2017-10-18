@@ -25,7 +25,7 @@ export const addRecipe = (recipe)=>{
 
 export const deleteRecipe = (id)=>{
     console.log('before api delete',id);
-    return axios.delete(`${BASE}delete`,{headers: { "id":id}}).then((response)=>{
+    return axios.delete(`${BASE}delete`,{headers: id}).then((response)=>{
         console.log('inside api delete',response);
     })
 };

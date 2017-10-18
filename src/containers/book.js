@@ -6,7 +6,7 @@ import Cover from '../components/cover';
 import Dishes from '../components/dishes';
 import NoDishes from '../components/no_dishes';
 import Add from '../components/add';
-import {addNewRecipe,getAllRecipes, selectNewTab} from '../actions/index';
+import {addNewRecipe, delRecipe, getAllRecipes, selectNewTab} from '../actions/index';
 
 
 class Book extends Component{
@@ -140,8 +140,6 @@ class Book extends Component{
         const letter = alphabet[random];
 
         this.props.dispatch(selectNewTab(letter));
-
-
     }
 
     handleEditForm(values){
@@ -169,6 +167,7 @@ class Book extends Component{
     handleEntryDelete(id){
         //info is passed into the modal from the local component state and returned here
         console.log('dish to delete',id);
+        this.props.dispatch(delRecipe({dishID: id}));
         this.setState({showModal: !this.state.showModal, recipe: null});
     }
 
