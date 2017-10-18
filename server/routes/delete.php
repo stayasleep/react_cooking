@@ -2,24 +2,25 @@
 if(mysqli_connect_errno()){
     die("Connection Failed: ".mysqli_connect_error());
 }
-var_dump("post",$_REQUEST);
-print "nothing";
+//var_dump("post",$_REQUEST);
 
+//var_dump($_SERVER);
+$id = $_SERVER['HTTP_DISHID'];
+//print $id;
 
-$client = file_get_contents("php://input");
-$client = utf8_encode($client);
-$res = json_decode($client, true);
-var_dump($res);
-foreach (getallheaders() as $name => $value) {
-    print "$name: $value\n";
-}
+//$client = file_get_contents("php://input");
+//$client = utf8_encode($client);
+//$res = json_decode($client, true);
+//var_dump($res);
+//foreach (getallheaders() as $name => $value) {
+//    print "$name: $value\n";
+//}
 
-if(!isset($id)){
+if(empty($id)){
     $output['errors'][]="ID not supplied with request";
-}
-if(count($output['errors'])===0){
+}else{
     //no errors, lets continue
-    $query = "DELETE FROM `recipes` WHERE `id`=?";
+    $query = "DELETE FROM `recipes` WHERE `dish_id`=?";
     if($stmt=$conn->prepare($query)){
         //bind our params
         $stmt->bind_param("s",$id);
@@ -32,6 +33,8 @@ if(count($output['errors'])===0){
             $output['errors'][]="There was a problem trying to delete.";
         }
         $stmt->close();
+    }else{
+        $output['errors'][]="Query Problem";
     }
 }
 $conn->close();
