@@ -20,7 +20,6 @@ class Book extends Component{
             stepper: null,
             count: 0
         };
-
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.handleEntryDelete = this.handleEntryDelete.bind(this);
         this.cancelEntryDelete = this.cancelEntryDelete.bind(this);
@@ -47,7 +46,6 @@ class Book extends Component{
                 let filteredDishes = nextProps.food.filter((dish,index)=>{
                     return dish.dish_name[0].toUpperCase() === nextProps.selected;
                 });
-                console.log('filtered dish',filteredDishes);
                 let stepper = Math.ceil(filteredDishes.length/4) -1;//maybe math.floor instead
                 let portion = filteredDishes.slice(0,4); //initialize the state to first 4
                 //we have an array of X, but we only want to display X-n at a time, until you hit stepper and then x-(n+1) at a time
@@ -60,10 +58,6 @@ class Book extends Component{
                     arr[splitAt].push(value);
                     return arr;
                 },[]);
-                console.log('split into two arrays for C',partition);
-
-
-
 
                 this.setState({
                     editDish: Array(portion.length).fill(false),
@@ -128,11 +122,6 @@ class Book extends Component{
                 count: this.state.count+1,
             });
         }
-        // console.log('handle next');
-        // this.setState({
-        //     count: this.state.count + 1,
-        // })
-
     }
     handlePrevious(){
         //so we dont end up on page negative X
@@ -141,11 +130,6 @@ class Book extends Component{
                 count: this.state.count -1,
             });
         }
-        // console.log('handle previous');
-        // this.setState({
-        //     count: this.state.count -1,
-        // })
-
     }
 
 

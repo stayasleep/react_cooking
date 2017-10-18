@@ -2,7 +2,6 @@ import React from 'react';
 import {Col} from 'react-bootstrap';
 
 const Column = (props)=>{
-    console.log('eh',props.tabs);
     return(
         <Col xs={12}>
             <h1 className="tab-title">Select A Tab</h1>

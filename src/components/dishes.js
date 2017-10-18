@@ -93,8 +93,8 @@ const Dishes =(props) =>{
                     {props.paginate &&
                     <Col sm={12}>
                         <div className="paginate">
-                            <div onClick={props.handlePrevious}>Previous</div>
-                            <div onClick={props.handleNext}>Next</div>
+                            <Button bsStyle="link" onClick={props.handlePrevious}>Previous</Button>
+                            <Button bsStyle="link" onClick={props.handleNext}>Next</Button>
                         </div>
                     </Col>
                     }

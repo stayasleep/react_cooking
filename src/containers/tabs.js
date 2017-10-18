@@ -11,11 +11,9 @@ class Tabs extends Component{
     }
 
     handleLetterClick(letter){
-        console.log('clicked',letter);
         this.props.dispatch(selectNewTab(letter));
     }
     render(){
-        console.log('tabs prop',this.props);
         return(
                 <Column
                     onClick={this.handleLetterClick}
