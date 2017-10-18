@@ -6,3 +6,6 @@ export const ADDED_RECIPE = "added_recipe";
 
 export const REQ_GET_DISHES = "req_get_dishes";
 export const GET_DISHES = "get_dishes";
+
+export const REQ_DEL_RECIPE = 'req_del_recipe';
+export const DEL_SUCCESS = 'del_success';

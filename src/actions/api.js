@@ -22,3 +22,10 @@ export const addRecipe = (recipe)=>{
         console.log('add err',err);
     })
 };
+
+export const deleteRecipe = (id)=>{
+    console.log('before api delete',id);
+    return axios.delete(`${BASE}delete`,{headers: { "id":id}}).then((response)=>{
+        console.log('inside api delete',response);
+    })
+};
