@@ -38,6 +38,7 @@ class Book extends Component{
     }
 
     componentWillReceiveProps(nextProps){
+        console.log('WILL RECEIVE THIS PROPS',this.props);
         console.log("WILL RECEIVE PROPS",nextProps);
         if(this.props.selected !== nextProps.selected){
             if(nextProps.selected !== "Add"){
