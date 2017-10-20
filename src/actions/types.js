@@ -9,3 +9,6 @@ export const GET_DISHES = "get_dishes";
 
 export const REQ_DEL_RECIPE = 'req_del_recipe';
 export const DEL_SUCCESS = 'del_success';
+
+export const REQ_UPDATE_RECIPE = "req_update_recipe";
+export const UPDATE_SUCCESS = "update_success";

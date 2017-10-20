@@ -29,3 +29,12 @@ export const deleteRecipe = (id)=>{
         console.log('inside api delete',response);
     })
 };
+
+export const updateRecipe= (recipe)=>{
+    return axios.put(`${BASE}update`, recipe).then((response)=>{
+        console.log('update happened b',response);
+    }).catch((err)=>{
+        console.log('update err',err);
+    })
+
+};

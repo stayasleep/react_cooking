@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01f0a1e8-7819-4c20-91e5-c18f3baf0790" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sagas/reqUpdRecipe.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sagas/watchReqUpd.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/update.php" afterPath="$PROJECT_DIR$/server/routes/update.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/api.js" afterPath="$PROJECT_DIR$/src/actions/api.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/index.js" afterPath="$PROJECT_DIR$/src/actions/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/types.js" afterPath="$PROJECT_DIR$/src/actions/types.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/book.js" afterPath="$PROJECT_DIR$/src/containers/book.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/form.js" afterPath="$PROJECT_DIR$/src/containers/form.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/dish_reducer.js" afterPath="$PROJECT_DIR$/src/reducers/dish_reducer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sagas/index.js" afterPath="$PROJECT_DIR$/src/sagas/index.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,7 +26,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5701184">
+    <splitter split-orientation="horizontal" split-proportion="0.521867">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
           <file leaf-file-name="add.js" pinned="false" current-in-tab="false">
@@ -31,13 +41,25 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="book.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="book.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/containers/book.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-80">
-                  <caret line="40" column="58" lean-forward="false" selection-start-line="40" selection-start-column="58" selection-end-line="40" selection-end-column="58" />
+                <state relative-caret-position="-120">
+                  <caret line="162" column="37" lean-forward="false" selection-start-line="162" selection-start-column="37" selection-end-line="162" selection-end-column="37" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="update.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/server/routes/update.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="880">
+                  <caret line="22" column="15" lean-forward="true" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
+                  <folding>
+                    <marker date="1508459745948" expanded="true" signature="385:486" ph="UPDATE `reci... " />
                   </folding>
                 </state>
               </provider>
@@ -46,8 +68,8 @@
           <file leaf-file-name="api.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/actions/api.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="821">
-                  <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+                <state relative-caret-position="1141">
+                  <caret line="39" column="2" lean-forward="false" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
                   <folding />
                 </state>
               </provider>
@@ -72,7 +94,20 @@
                   <caret line="12" column="37" lean-forward="false" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
                   <folding>
                     <element signature="e#0#45#0" expanded="true" />
+                    <marker date="1508312473206" expanded="true" signature="199:441" ph="{...}" />
+                    <marker date="1508312473206" expanded="true" signature="208:382" ph="{...}" />
+                    <marker date="1508312473206" expanded="true" signature="319:376" ph="[...]" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="form.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/containers/form.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="158">
+                  <caret line="8" column="55" lean-forward="true" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -89,11 +124,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="dish_reducer.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="dish_reducer.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/reducers/dish_reducer.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="440">
-                  <caret line="11" column="46" lean-forward="false" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+                  <caret line="11" column="49" lean-forward="false" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
                   <folding />
                 </state>
               </provider>
@@ -138,12 +173,46 @@
             </entry>
           </file>
           <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/sagas/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="600">
+                  <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+                  <folding>
+                    <element signature="e#0#42#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/actions/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1120">
-                  <caret line="28" column="2" lean-forward="true" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
+                <state relative-caret-position="1113">
+                  <caret line="35" column="2" lean-forward="false" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="watchReqUpd.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/sagas/watchReqUpd.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="200">
+                  <caret line="5" column="58" lean-forward="false" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
                   <folding>
-                    <marker date="1508311524447" expanded="true" signature="452:563" ph="{...}" />
+                    <element signature="e#0#48#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="reqUpdRecipe.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/sagas/reqUpdRecipe.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="360">
+                  <caret line="9" column="48" lean-forward="false" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
+                  <folding>
+                    <element signature="e#0#47#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -152,8 +221,8 @@
           <file leaf-file-name="dishes.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/dishes.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-800">
-                  <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+                <state relative-caret-position="1920">
+                  <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -161,7 +230,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="delete.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="delete.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/routes/delete.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="640">
@@ -193,10 +262,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="create.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="create.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/server/routes/create.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-120">
+                <state relative-caret-position="600">
                   <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
                   <folding>
                     <marker date="1507425360356" expanded="true" signature="733:825" ph="INSERT INTO `recipes`... " />
@@ -257,6 +326,7 @@
       <find>fff</find>
       <find>left</find>
       <find>spine</find>
+      <find>index</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -288,7 +358,6 @@
         <option value="$PROJECT_DIR$/src/containers/modal.js" />
         <option value="$PROJECT_DIR$/src/components/confirmation.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/containers/form.js" />
         <option value="$PROJECT_DIR$/src/styles/form.css" />
         <option value="$PROJECT_DIR$/src/styles/cover.css" />
         <option value="$PROJECT_DIR$/src/styles/add.css" />
@@ -300,17 +369,21 @@
         <option value="$PROJECT_DIR$/src/styles/tabs.css" />
         <option value="$PROJECT_DIR$/src/containers/tabs.js" />
         <option value="$PROJECT_DIR$/src/components/column_tabs.js" />
-        <option value="$PROJECT_DIR$/src/actions/types.js" />
-        <option value="$PROJECT_DIR$/src/actions/index.js" />
         <option value="$PROJECT_DIR$/src/sagas/reqDelRecipe.js" />
-        <option value="$PROJECT_DIR$/src/reducers/dish_reducer.js" />
         <option value="$PROJECT_DIR$/src/sagas/watchReqDel.js" />
-        <option value="$PROJECT_DIR$/src/sagas/index.js" />
-        <option value="$PROJECT_DIR$/src/actions/api.js" />
         <option value="$PROJECT_DIR$/src/styles/dishes.css" />
         <option value="$PROJECT_DIR$/src/components/dishes.js" />
         <option value="$PROJECT_DIR$/server/routes/delete.php" />
+        <option value="$PROJECT_DIR$/src/actions/api.js" />
+        <option value="$PROJECT_DIR$/src/actions/types.js" />
+        <option value="$PROJECT_DIR$/src/actions/index.js" />
+        <option value="$PROJECT_DIR$/src/sagas/reqUpdRecipe.js" />
+        <option value="$PROJECT_DIR$/src/containers/form.js" />
+        <option value="$PROJECT_DIR$/src/sagas/watchReqUpd.js" />
+        <option value="$PROJECT_DIR$/src/sagas/index.js" />
         <option value="$PROJECT_DIR$/src/containers/book.js" />
+        <option value="$PROJECT_DIR$/server/routes/update.php" />
+        <option value="$PROJECT_DIR$/src/reducers/dish_reducer.js" />
       </list>
     </option>
   </component>
@@ -562,7 +635,7 @@
     <property name="add_unversioned_files" value="true" />
     <property name="js.eslint.eslintPackage" value="C:\Users\Bri\Documents\React Projects\react_cooking\node_modules\eslint" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react_cms" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
@@ -633,12 +706,12 @@
       <option name="presentableId" value="Default" />
       <updated>1507360638400</updated>
       <workItem from="1507360640490" duration="124982000" />
-      <workItem from="1508286033322" duration="17614000" />
+      <workItem from="1508286033322" duration="24027000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142596000" />
+    <option name="totallyTimeSpent" value="149009000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -653,7 +726,7 @@
     <frame x="-16" y="-16" width="3232" height="1732" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15580645" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12225807" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32986832" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917532" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -686,24 +759,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/containers/tabs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="18" column="15" lean-forward="false" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/modal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="3" column="28" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/dishes.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -716,14 +771,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="977">
           <caret line="29" column="25" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/update.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -807,6 +854,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#47#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -866,16 +916,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -910,24 +950,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/types.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="10" column="41" lean-forward="false" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1120">
-          <caret line="28" column="2" lean-forward="true" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
-          <folding>
-            <marker date="1508311524447" expanded="true" signature="452:563" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sagas/reqAddRecipe.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -948,46 +970,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sagas/reqDelRecipe.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="12" column="37" lean-forward="false" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sagas/watchReqDel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sagas/watchReqAdd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sagas/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/cover.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
@@ -995,14 +977,6 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="821">
-          <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1029,7 +1003,7 @@
         <state relative-caret-position="520">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1038,34 +1012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/dishes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-800">
-          <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/create.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-          <folding>
-            <marker date="1507425360356" expanded="true" signature="733:825" ph="INSERT INTO `recipes`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/data.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1088,21 +1034,154 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/dish_reducer.js">
+    <entry file="file://$PROJECT_DIR$/src/actions/api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="11" column="46" lean-forward="false" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+        <state relative-caret-position="1141">
+          <caret line="39" column="2" lean-forward="false" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sagas/reqDelRecipe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="12" column="37" lean-forward="false" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+            <marker date="1508312473206" expanded="true" signature="199:441" ph="{...}" />
+            <marker date="1508312473206" expanded="true" signature="208:382" ph="{...}" />
+            <marker date="1508312473206" expanded="true" signature="319:376" ph="[...]" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/dishes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1920">
+          <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="8" column="55" lean-forward="true" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/types.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="13" column="47" lean-forward="false" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1113">
+          <caret line="35" column="2" lean-forward="false" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sagas/watchReqAdd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sagas/watchReqDel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sagas/reqUpdRecipe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="9" column="48" lean-forward="false" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sagas/watchReqUpd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="5" column="58" lean-forward="false" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sagas/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+          <folding>
+            <marker date="1507425360356" expanded="true" signature="733:825" ph="INSERT INTO `recipes`... " />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/book.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-80">
-          <caret line="40" column="58" lean-forward="false" selection-start-line="40" selection-start-column="58" selection-end-line="40" selection-end-column="58" />
+        <state relative-caret-position="-120">
+          <caret line="162" column="37" lean-forward="false" selection-start-line="162" selection-start-column="37" selection-end-line="162" selection-end-column="37" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="880">
+          <caret line="22" column="15" lean-forward="true" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
+          <folding>
+            <marker date="1508459745948" expanded="true" signature="385:486" ph="UPDATE `reci... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/dish_reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="11" column="49" lean-forward="false" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>

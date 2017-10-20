@@ -1,4 +1,4 @@
-import { REQ_TAB, REQ_ADD_RECIPE, REQ_DEL_RECIPE, REQ_GET_DISHES } from './types';
+import { REQ_TAB, REQ_UPDATE_RECIPE, REQ_ADD_RECIPE, REQ_DEL_RECIPE, REQ_GET_DISHES } from './types';
 
 export const selectNewTab = (letter) => ({
 	type: REQ_TAB,
@@ -25,5 +25,12 @@ export const delRecipe= (id) =>{
     return{
         type:REQ_DEL_RECIPE,
         payload: id,
+    }
+};
+
+export const updRecipe = (recipe)=>{
+    return{
+        type: REQ_UPDATE_RECIPE,
+        payload: recipe
     }
 };

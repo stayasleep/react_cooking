@@ -8,7 +8,7 @@ class EditForm extends Component{
     render(){
         const {handleSubmit,index, reset} = this.props;
         return(
-                <form onSubmit={handleSubmit((values)=> {this.props.onEdit(values)})}>
+                <form onSubmit={handleSubmit((values)=> {this.props.onEdit({...values, position: index})})}>
                     <Field className="form-control edit-name" type="text" name="edit_name" component={renderInput}/>
                     <span className="edit-time">
                     <Field name="edit_time" className="form-control edit-time" type="text"  component={renderInput} />

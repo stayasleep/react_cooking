@@ -1,4 +1,4 @@
-import {ADDED_RECIPE, DEL_SUCCESS, GET_DISHES} from '../actions/types';
+import {ADDED_RECIPE, DEL_SUCCESS, GET_DISHES, UPDATE_SUCCESS} from '../actions/types';
 const defaultState= {all:[]}; //will get an array full of objects
 
 export default function(state=defaultState, action){
@@ -7,6 +7,8 @@ export default function(state=defaultState, action){
             console.log('reducer for added recipe',action);
             return {...state, all: action.recipes};
         case GET_DISHES:
+            return {...state, all: action.recipes};
+        case UPDATE_SUCCESS:
             return {...state, all: action.recipes};
         case DEL_SUCCESS:
             console.log('del success',action);

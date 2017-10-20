@@ -6,7 +6,7 @@ import Cover from '../components/cover';
 import Dishes from '../components/dishes';
 import NoDishes from '../components/no_dishes';
 import Add from '../components/add';
-import {addNewRecipe, delRecipe, getAllRecipes, selectNewTab} from '../actions/index';
+import {addNewRecipe, delRecipe, getAllRecipes, selectNewTab, updRecipe} from '../actions/index';
 
 
 class Book extends Component{
@@ -40,7 +40,8 @@ class Book extends Component{
     componentWillReceiveProps(nextProps){
         console.log('WILL RECEIVE THIS PROPS',this.props);
         console.log("WILL RECEIVE PROPS",nextProps);
-        if(this.props.selected !== nextProps.selected){
+
+        // if(this.props.selected !== nextProps.selected){
             if(nextProps.selected !== "Add"){
                 console.log('next not this received');
                 //a letter is selected, makes the state
@@ -68,14 +69,14 @@ class Book extends Component{
                     stepper: stepper,
                 });
             }
-        }
+        // }
     }
 
     renderDishList(){
         //lets check our total filtered array
         console.log('renda chameleon');
         const dishes = this.state.totalFiltered.slice();
-        if(dishes.length < 4){
+        if(dishes.length <= 4){
             return (
                 <Dishes
                     dishes={dishes}
@@ -145,6 +146,22 @@ class Book extends Component{
 
     handleEditForm(values){
         console.log('edit val',values);
+        //values will include ID
+        const subArray = this.state.count;
+        const currentArray = this.state.display[subArray].slice(); //array partition we might be in
+        console.log('my crrent array',currentArray);
+        const dishWanted = values.position; //this is the index in the array of the page you are looking at
+        const dishID = currentArray[dishWanted].dish_id; //the id of the dish from the overall array
+        console.log('dish iddddd',dishID);
+        const updatedValues = {...values, position: dishID};
+        //find position in out line up;
+        //i can have multiple edits open at the same time, so indexOf and lastIndexOf are useless because i will either never get the last or the
+        //first...best to send index position back with the edit form
+        //i have an array, can i find the position where
+        this.props.dispatch(updRecipe(updatedValues));
+        const editDish = this.state.editDish.slice();
+        editDish[dishWanted] = false;
+        this.setState({editDish: editDish})
     }
     handleFormSubmit(values){
         console.log('my form',values);
